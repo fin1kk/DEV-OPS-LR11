@@ -1,16 +1,26 @@
+"""Simple module for DEV-OPS demo with a testable class."""
+
 import http.server
 import socketserver
+
 PORT = 8000
 
-classTestMe():
-  def take_five(self):
-    return 4
-  def port(self):
-    return PORT
-    
+
+class TestMe:
+    """A simple class to demonstrate testing and linting compliance."""
+
+    def take_five(self):
+        """Return the integer 5."""
+        return 5
+
+    def port(self):
+        """Return the default server port."""
+        return PORT
+
+
 if __name__ == '__main__':
-  Handler = http.server.SimpleHTTPRequestHandler
-  
-  with socketserver.TCPServer(("",PORT),Handler) as http:
-    print("servingatport",PORT)
-    http.serve_forever()
+    Handler = http.server.SimpleHTTPRequestHandler
+
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("serving at port", PORT)
+        httpd.serve_forever()

@@ -27,6 +27,6 @@ jobs:
     - run: docker build -t test-image -f ./server/Dockerfile ./server
     - run: docker run -d --name app-server -p 8000:8000 --restart unless-stopped test-image
     - run: sleep 11
-    - run: docker ps-a
+    - run: docker ps -a
     - run: sleep 11
     - run: 'curl 127.0.0.1:8000'

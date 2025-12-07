@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
-    - run: docker build-t test-image ./server--file ./server/dockerfile
+    - run: docker build -t test-image ./server--file ./server/dockerfile
     - run: docker run-d--name app-server8000-p 8000:8000 --restart unless-stopped test-image
     - run: sleep 11
     - run: docker ps-a

@@ -34,9 +34,9 @@ jobs:
         run: 'sed -i "s/release-date:.*/release-date: $(date +%s)/g" ./server-k8s-manifests/devops-psu.yml'
       
       - name: Commitmanifest
-        run:
-          git config --global user.name 'ReleaseRunner'
-          git config --global user.email 'runner@users.noreply.github.com'
-          git commit -am "Release"
-          git push --force origin main:release
+          run: |
+            git config --global user.name 'ReleaseRunner'
+            git config --global user.email 'runner@users.noreply.github.com'
+            git commit -am "Release"
+            git push --force origin main:release
           

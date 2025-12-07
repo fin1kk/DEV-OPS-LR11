@@ -1,4 +1,4 @@
-"""Simple module for DEV-OPS demo with a testable class."""
+"""Simple module for DEV-OPS demo with a testable class. Change for test"""
 
 import http.server
 import socketserver
